@@ -1,32 +1,43 @@
-<meta charset "UTF-8">			
-<canvas width="600" height="400"></canvas>			
-			
-			
-<script>			
-strict mode			
-class WritingSystem {			
-	constructor(quantity, characters, alphabetEquivalents) {		
-		this.quantity = quantity;	
-		this.characters = characters;	
-		this.alphabetEquivalents = alphabetEquivalents;	
-	}		
-}			
-			
-const alphabet = new WritingSystem(26, ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]);			
-			
-const japaneseKana = new WritingSystem(46, [{hiragana: [{"あ": [alphabet.characters[0]]}, {"い": [alphabet.characters[8]]}, "う", "え", "お", {"か": [alphabet.characters[10]+alphabet.characters[0]]}, "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", {"ち": [alphabet.characters[2]+alphabet.characters[7]+alphabet.characters[8]]}, "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ", "を", "ん"]}, {katakana: ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト", "ナ", "ニ", "ヌ", "ネ", "ノ", "ハ", "ヒ", "フ", "ヘ", "ホ", "マ", "ミ", "ム", "メ", "モ", "ヤ", "ユ", "ヨ", "ラ", "リ", "ル", "レ", "ロ", "ワ", "ヲ", "ン"]}], ["a", "i", "u", "e", "o", "ka", "ki", "ku", "ke", "ko", "sa", "shi", "su", "se", "so", "ta", "chi", "tsu", "te", "to", "na", "ni", "nu", "ne", "no", "ha/wa", "hi", "hu", "he", "ho", "ma", "mi", "mu", "me", "mo", "ya", "yu", "yo", "ra", "ri", "ru", "re", "ro", "wa", "wo", "n"]);			
-			
-const japaneseKanji = new WritingSystem("", {kanji: {"一": Object.assign({}, japaneseKana.characters[0].hiragana[1], japaneseKana.characters[0].hiragana[16])}});			
-			
-console.log(japaneseKana.characters);			
-			
-console.log(alphabet.characters[0]);			
-			
-console.log(japaneseKanji);			
-			
-console.log(japaneseKanji.characters.kanji);			
-			
-console.log(Object.keys(japaneseKanji.characters.kanji.一).join(""));			
-			
-</script>			
-			
+<meta charset "UTF-8">
+
+
+
+<script>
+//<canvas width="600" height="400"></canvas>
+
+"strict mode"
+class WritingSystem {
+	constructor(quantity, characters, alphabetEquivalents) {
+		this.quantity = quantity; 
+		this.characters = characters;
+		this.alphabetEquivalents = alphabetEquivalents;
+	}	
+}
+
+const alphabet = new WritingSystem(26, ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]);
+
+const japaneseKana = new WritingSystem(46, [{hiragana: [{"あ": [alphabet.characters[0]]}, {"い": [alphabet.characters[8]]}, "う", "え", "お", {"か": [alphabet.characters[10]+alphabet.characters[0]]}, "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", {"ち": [alphabet.characters[2]+alphabet.characters[7]+alphabet.characters[8]]}, "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ", "を", "ん"]}, {katakana: ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト", "ナ", "ニ", "ヌ", "ネ", "ノ", "ハ", "ヒ", "フ", "ヘ", "ホ", "マ", "ミ", "ム", "メ", "モ", "ヤ", "ユ", "ヨ", "ラ", "リ", "ル", "レ", "ロ", "ワ", "ヲ", "ン"]}], ["a", "i", "u", "e", "o", "ka", "ki", "ku", "ke", "ko", "sa", "shi", "su", "se", "so", "ta", "chi", "tsu", "te", "to", "na", "ni", "nu", "ne", "no", "ha/wa", "hi", "hu", "he", "ho", "ma", "mi", "mu", "me", "mo", "ya", "yu", "yo", "ra", "ri", "ru", "re", "ro", "wa", "wo", "n"]);
+
+const japaneseKanji = new WritingSystem("", {kanji: {"一": Object.assign({}, japaneseKana.characters[0].hiragana[1], japaneseKana.characters[0].hiragana[16])}});
+
+console.log(japaneseKana.characters); 
+
+console.log(alphabet.characters[0]);
+
+console.log(japaneseKanji);
+
+console.log(japaneseKanji.characters.kanji);
+
+console.log(Object.keys(japaneseKanji.characters.kanji.一).join(""));
+
+function lettersMachine() {
+	document.write(alphabet.characters[parseInt(Math.random()*(26-0)+0)]);
+	console.log(alphabet.characters[parseInt(Math.random()*(26-0)+0)]);  
+	
+}
+
+setInterval(lettersMachine, 2000);
+
+
+
+</script>
