@@ -30,13 +30,29 @@ console.log(japaneseKanji.characters.kanji);
 
 console.log(Object.keys(japaneseKanji.characters.kanji.一).join(""));
 
+let generatedRandomLetters = [];
+
 function lettersMachine() {
-	document.write(alphabet.characters[parseInt(Math.random()*(26-0)+0)]);
-	console.log(alphabet.characters[parseInt(Math.random()*(26-0)+0)]);  
-	
+	generatedRandomLetters.push(alphabet.characters[parseInt(Math.random()*(26-0)+0)]);
+
+	document.write(generatedRandomLetters[generatedRandomLetters.length-1], "<br>");
+	console.log(generatedRandomLetters);
+
 }
 
-setInterval(lettersMachine, 2000);
+function kanaMerge(){
+	for(let i=0; i<generatedRandomLetters.length; i++)	
+		
+		if(japaneseKana){
+	
+		}
+
+
+}
+
+
+
+setInterval(lettersMachine, 500);
 
 
 
